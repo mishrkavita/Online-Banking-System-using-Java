@@ -1,0 +1,46 @@
+<HTML><HEAD></HEAD>
+<BODY bgcolor="#F1F1FD">
+
+<FORM NAME="LoginPage" ACTION="/OnlineLoginServlet" METHOD ="POST">
+<TABLE cellPadding="3" ALIGN="center">
+<TR bgcolor="#ECFAEB">
+<TD>USERNAME:</TD>
+<TD>
+<INPUT TYPE="text" NAME="UserName" Value="" SIZE="15" focused>
+</TD>
+</TR>
+<TR bgcolor="#ECFAEB">
+<TD>PASSWORD:</TD>
+<TD>
+<INPUT TYPE="password" NAME="PassWord" Value="" SIZE="15">
+<INPUT TYPE="button" NAME="submitBTN" VALUE="Login" onClick="checkInputs()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<A HREF='/CSCI6810/Withdraw.jsp?UserID=someone@yahoo.com' TARGET='display'>Withdraw</A>
+<A HREF='/CSCI6810/PreTransfer.jsp?UserID=someone@yahoo.com' TARGET='display'>Transfer</A>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First time user? Click <A HREF='/CSCI6810/SignUp.html' TARGET='display'>Sign Up</A>
+</TD>
+</TR>
+</TABLE>
+</FORM>
+</BODY>
+<SCRIPT LANGUAGE="JavaScript">
+function checkInputs()
+{
+var Prompts = "";
+Username = window.document.LoginPage.UserName.value;
+Password = window.document.LoginPage.PassWord.value;
+if (Username == "" || Password == "") {
+if (Username == "")
+Prompts +="Please enter your username!\n";
+if (Password == "")
+Prompts +="Please enter your password!\n";
+if (Prompts != "")
+window.alert(Prompts);
+} else {
+document.LoginPage.submit();
+}
+}
+</SCRIPT>
+</HTML>
+
+
